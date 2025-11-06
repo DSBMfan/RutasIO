@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProyectoFinal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-route logo-icon"></i>
+            <h1>Rutas</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="control-panel panel">
+            <div class="route-selection">
+                <h2><i class="fas fa-map-marker-alt"></i> Selección de Ruta</h2>
+                <div class="form-group">
+                    <label for="origin">Punto de Origen</label>
+                    <select id="origin">
+                        <option value="">Selecciona un origen</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Punto de Destino</label>
+                    <select id="destination">
+                        <option value="">Selecciona un destino</option>
+                    </select>
+                </div>
+                <button id="search-btn" class="btn">
+                    <i class="fas fa-search"></i> Buscar Ruta Óptima
+                </button>
+            </div>
+
+            <div class="results">
+                <h2><i class="fas fa-chart-line"></i> Resultados</h2>
+                <div class="result-item">
+                    <div class="result-title">
+                        <i class="fas fa-code-branch"></i> Algoritmo de Dijkstra
+                    </div>
+                    <div class="result-value" id="dijkstra-result">Esperando cálculo...</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-title">
+                        <i class="fas fa-project-diagram"></i> Algoritmo de Floyd
+                    </div>
+                    <div class="result-value" id="floyd-result">Esperando cálculo...</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-title">
+                        <i class="fas fa-road"></i> Ruta Recomendada
+                    </div>
+                    <div class="result-value" id="route-result">-</div>
+                </div>
+            </div>
+
+            <div class="algorithm-info">
+                <h3><i class="fas fa-info-circle"></i> Información de Algoritmos</h3>
+                <p><strong>Dijkstra:</strong> Encuentra el camino más corto desde un nodo origen a todos los demás nodos.</p>
+                <p><strong>Floyd-Warshall:</strong> Calcula los caminos más cortos entre todos los pares de nodos.</p>
+            </div>
+        </div>
+
+        <div class="visualization-panel panel">
+            <h2><i class="fas fa-network-wired"></i> Visualización del Grafo</h2>
+            <div class="graph-container">
+                <canvas id="graph-canvas"></canvas>
+            </div>
+            <div class="graph-controls">
+                <button class="graph-btn" id="reset-view">
+                    <i class="fas fa-sync-alt"></i> Restablecer Vista
+                </button>
+                <button class="graph-btn" id="toggle-weights">
+                    <i class="fas fa-weight-hanging"></i> Mostrar Pesos
+                </button>
+            </div>
+        </div>
+    </div>
+
+  
+
+    <script src="app.js"></script>
+</body>
+</html>
