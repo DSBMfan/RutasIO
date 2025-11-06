@@ -307,7 +307,7 @@ class AppRutas {
         // Subtítulo
         this.ctx.font = '12px "Segoe UI", Tahoma, Geneva, Verdana, sans-serif';
         this.ctx.fillStyle = '#a0a0a0';
-        this.ctx.fillText('Nodo A: Centro | Rutas optimizadas para múltiples nodos intermedios', this.canvas.width / 2, 50);
+        this.ctx.fillText('Nodo A: Centro', this.canvas.width / 2, 50);
     }
     
     esAristaEnRuta(lugar1, lugar2, ruta) {
@@ -497,4 +497,5 @@ class AppRutas {
 // Inicializar la aplicación cuando se carga la página
 document.addEventListener('DOMContentLoaded', () => {
     new AppRutas();
+
 });
